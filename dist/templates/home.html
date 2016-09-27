@@ -1,8 +1,17 @@
-<section>
+<section class="hero">
     <h1>{{ home.heroTitle }}</h1>
 </section>
 
-<ul>
-    <li ng-repeat="room in home.rooms"> {{ room.name }} </li>
-</ul>
+
+<section id="sidebar">
+    <h2>Chat Rooms</h2>
+    
+    <ul>
+        <li ng-repeat="room in home.rooms"> {{ room.name }} </li>
+    </ul>
+    
+    <div ng-controller="RoomCtrl as roomC">
+        <button ng-click="roomC.open()">Create a New Room</button>
+    </div>
+</section>
 
