@@ -1,21 +1,14 @@
 (function() {
-    function HomeCtrl($uibModal, Room) {
+    function HomeCtrl(Room, Messages) {          
         var ctrl = this;
         ctrl.heroTitle = "Bloc Chat";
         
         ctrl.rooms = Room.all;
-        
-        ctrl.open = function() {
-            $uibModal.open({
-                templateURL: '/templates/room.html',
-                controller: 'RoomCtrl',
-                size: 'sm'
-            });
-        };
+        ctrl.messageList = Room.getMessages;
         
     };
     
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$uibModal', 'Room', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', HomeCtrl]);
 })();

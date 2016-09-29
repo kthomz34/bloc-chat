@@ -6,15 +6,16 @@
 
 <!--Sidebar with list of rooms-->
 <nav class="navbar">
-        
-        <section class="hero">
-            <h1>{{ home.heroTitle }}</h1>
-        </section>
+	<section class="container-1">
+    	<h1 class="hero">{{ home.heroTitle }}</h1>
+    </section>
     <div>
         <h3 class="room-list">Chat Rooms</h3>
 
         <ul>
-            <li class="nav-list" ng-repeat="room in home.rooms"> {{ room.name }} </li>
+            <li class="nav-list" ng-repeat="room in home.rooms">  
+            	<a href="" ng-click="home.getMessages(room)">{{ room.name }}</a>
+            </li>
         </ul>
 
         <div ng-controller="RoomCtrl as roomC">
