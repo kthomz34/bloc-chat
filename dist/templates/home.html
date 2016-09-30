@@ -3,25 +3,28 @@
 </div>
 
 
-
+<div ng-controller="RoomCtrl as roomC">
 <!--Sidebar with list of rooms-->
-<nav class="navbar">
+<nav class="navbar" >
 	<section class="container-1">
     	<h1 class="hero">{{ home.heroTitle }}</h1>
     </section>
-    <div>
+    <div >
         <h3 class="room-list">Chat Rooms</h3>
 
         <ul>
-            <li class="nav-list" ng-repeat="room in home.rooms">  
-            	<a href="" ng-click="home.getMessages(room)">{{ room.name }}</a>
+            <li class="nav-list" ng-repeat="room in roomC.all">  
+            	<a href="" ng-click="roomC.getMessages(room)">{{ room.name }}</a>
             </li>
         </ul>
 
-        <div ng-controller="RoomCtrl as roomC">
+        <div >
             <button ng-click="roomC.open()">Create a New Room</button>
         </div>
     </div>
 </nav>
+
+<div ng-repeat="message in roomC.messages"> </div>
+</div>
 
 

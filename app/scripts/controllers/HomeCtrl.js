@@ -1,10 +1,9 @@
 (function() {
-    function HomeCtrl(Room, Messages) {          
+    function HomeCtrl(Room) {          
         var ctrl = this;
         ctrl.heroTitle = "Bloc Chat";
         
         ctrl.rooms = Room.all;
-        ctrl.messageList = Room.getMessages;
         
     };
     
