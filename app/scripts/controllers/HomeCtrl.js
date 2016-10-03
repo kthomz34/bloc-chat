@@ -1,7 +1,8 @@
 (function() {
-    function HomeCtrl($uibModal, Room, Message) {          
+    function HomeCtrl($uibModal, Room, Message, $cookies) {          
         var ctrl = this;
         ctrl.heroTitle = "Bloc Chat";
+		ctrl.user = $cookies.get('blocChatCurrentUser');
         
         ctrl.rooms = Room.all;
 		
@@ -10,25 +11,15 @@
         
         ctrl.open = function() {
             var modalInstance = $uibModal.open({
-                animation: ctrl.animationsEnabled,
                 templateUrl: '/templates/modal.html',
                 controller: 'ModalInstanceCtrl as modalInstance',
-				resolve: {
-                    rooms: function() {
-                        return ctrl.rooms;
-                    }
-                }
             });
         };
-
-//        ctrl.toggleAnimation = function () {
-//            ctrl.animationsEnabled = !ctrl.animationsEnabled;
-//        };
 		
 		ctrl.setRoom = function(room) {
             ctrl.currentRoom = room;
 			console.log(room.name);
-            ctrl.messageList = Message.getByRoomID(room.$id);
+            ctrl.messages = Message.getByRoomID(ctrl.currentRoom.$id);
         };
 		
     }
@@ -38,5 +29,5 @@
     
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$uibModal', 'Room', 'Message', HomeCtrl]);
+        .controller('HomeCtrl', ['$uibModal', 'Room', 'Message', '$cookies', HomeCtrl]);
 })();

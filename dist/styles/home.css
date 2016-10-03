@@ -4,11 +4,6 @@ html {
 	
     
 }
-.parent {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
 
 .hero {
     font-family: "Arial Black", Gadget, sans-serif;

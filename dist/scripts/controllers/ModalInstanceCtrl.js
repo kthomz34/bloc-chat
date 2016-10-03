@@ -12,7 +12,7 @@
             $uibModalInstance.dismiss('cancel');
         };
 
-     }
+    }
     
     angular
         .module('blocChat')
