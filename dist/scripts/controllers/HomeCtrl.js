@@ -4,11 +4,11 @@
         ctrl.heroTitle = "Bloc Chat";
         
         ctrl.rooms = Room.all;
+		
+		ctrl.currentRoom = {};
 	
-		ctrl.currentRoom = null;
         
         ctrl.open = function() {
-
             var modalInstance = $uibModal.open({
                 animation: ctrl.animationsEnabled,
                 templateUrl: '/templates/modal.html',
@@ -22,10 +22,9 @@
 		
 		ctrl.setRoom = function(room) {
             ctrl.currentRoom = room;
-            ctrl.messages = Message.getByRoomID(currentRoom.$id);
+            ctrl.messageList = Message.getByRoomID(room.$id);
         };
 		
-
     }
 
         

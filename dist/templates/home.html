@@ -10,11 +10,11 @@
 	<!--Sidebar with list of rooms-->
 	<nav class="navbar" >
 		<div>
-			<h3 class="rooms">Chat Rooms</h3>
+			<h3 class="room-title">Chat Rooms</h3>
 
 			<ul>
-				<li class="nav-list" ng-repeat="room in home.rooms">  
-					<a href="" ng-click="home.setRoom(room)">{{ room.name }}</a>
+				<li class="rooms" ng-repeat="room in home.rooms">  
+					<a href="" ng-click="setRoom(room)">{{ room.name }}</a>
 				</li>
 			</ul>
 
@@ -23,11 +23,13 @@
 			</div>
 		</div>
 	</nav>
+<!--
 		<section class="ChatRoom">
-			<h4 class="roomName">{{ room.name }}</h4>
+			<h4 class="roomName">{{ currentRoom.name }}</h4>
 			<h3>Messages</h3>
-			<p ng-repeat="message in home.room">{{ message.content }} </p>
+			<p ng-repeat="message in home.messages">{{ message.content }} </p>
 		</section>
+-->
 	</div>
 </section>
 

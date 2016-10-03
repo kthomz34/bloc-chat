@@ -4,10 +4,7 @@
       
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
-	  
-	// messages
-	var messageRef = firebase.database().ref().child("messages");
-    var messages = $firebaseArray(messageRef);
+	
 	  
     Room.all = rooms;
       
@@ -17,9 +14,7 @@
         })
     };
 	  
-	Room.bind = function() {
-    	return rooms;
-    };  
+	
 	
     
     return Room;
