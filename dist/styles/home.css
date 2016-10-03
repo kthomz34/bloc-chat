@@ -1,9 +1,75 @@
-/* modal styling below */
-.modalWindow {
-    text-align: center;
-    width: 33%;
-    margin: auto;
-    position: relative;
-    top: 25em;
-    border: 1px double black;
+html {
+    height: 100%;
+    
 }
+.parent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: dimgray;
+}
+
+.hero {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    text-align: center;
+    color: Black;
+}
+.main {
+    margin: auto;
+}
+
+/* styling for the chat control area */
+.navbar {
+    display: block;
+	padding: 0px 5px 0px 5px;
+    width: 15%;
+    float: left;
+    margin-right: 2%;
+    height: 50em;
+    background-color: white;
+}
+.navbar h3 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: -1em;
+}
+
+.navbar ul {
+    border-collapse: collapse;
+}
+.rooms:hover {
+    text-decoration: underline;
+	cursor: pointer;
+}
+
+
+/* styling for the chatroom area */
+.chatRoom {
+    width: 99%;
+    display: block;
+    height: 50em;
+    border: .25em solid grey;
+    background-color: white;
+}
+.roomName {
+    font-style: italic;
+    color: black;
+}
+.messages {
+    color: black;
+}
+.user {
+    text-decoration: underline;
+}
+.time {
+    font-style: italic;
+}
+.newMessages {
+    position: relative;
+    left: 16%;
+}
+
+
+
+

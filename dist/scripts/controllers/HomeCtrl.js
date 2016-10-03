@@ -13,6 +13,11 @@
                 animation: ctrl.animationsEnabled,
                 templateUrl: '/templates/modal.html',
                 controller: 'ModalInstanceCtrl as modalInstance',
+				resolve: {
+                    rooms: function() {
+                        return ctrl.rooms;
+                    }
+                }
             });
         };
 
@@ -22,6 +27,7 @@
 		
 		ctrl.setRoom = function(room) {
             ctrl.currentRoom = room;
+			console.log(room.name);
             ctrl.messageList = Message.getByRoomID(room.$id);
         };
 		

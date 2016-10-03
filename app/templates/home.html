@@ -1,4 +1,4 @@
-<section> 
+<section class="main"> 
 	<div class="logo-box">
 		<img src="/assets/images/bloc-logo-white.png" alt="bloc bloc logo">
 	</div>
@@ -14,7 +14,7 @@
 
 			<ul>
 				<li class="rooms" ng-repeat="room in home.rooms">  
-					<a href="" ng-click="setRoom(room)">{{ room.name }}</a>
+					<a ng-click="setRoom(room)">{{ room.name }}</a>
 				</li>
 			</ul>
 
@@ -23,12 +23,22 @@
 			</div>
 		</div>
 	</nav>
-<!--
 		<section class="ChatRoom">
 			<h4 class="roomName">{{ currentRoom.name }}</h4>
 			<h3>Messages</h3>
-			<p ng-repeat="message in home.messages">{{ message.content }} </p>
+			<p ng-repeat="message in messages">{{ message.content }} </p>
 		</section>
+		
+<!--
+	<section class="newMessages">
+		<form>
+
+			<input type="text" class="newText" placeholder="your message here" ng-model="message.content">
+			<button ng-click="home.sendMessage(message)">Submit</button>
+
+		</form>
+
+	</section>
 -->
 	</div>
 </section>
