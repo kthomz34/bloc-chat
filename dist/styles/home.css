@@ -1,73 +1,79 @@
-/*
-h1 {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-    font-size: 1.5rem;
-    text-align: left; 
-}
-
-h3 {
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    display: inline-block;
-    margin-left: 10%; 
-}
-
-
-ul {
-    margin: 3%;
-    padding: 0;
-    min-width: 250px;
-    list-style: none; 
-}
-
-li {
-    padding: 5%;
-    margin: 0;
-    color: white; 
-}
-
-.navbar {
-    position: fixed;
-    top: 75px;
-    left: 0px;
+html {
     height: 100%;
-    width: 25%;
-    background-color: #c0392b;
-    overflow: scroll;
-    border-right: 1px solid #d2d2d2;
-    min-width: 325px; 
+	background-color: rgba(231, 76, 60, 0.9)
+	
+    
+}
+.parent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: dimgray;
 }
 
 .hero {
-    font-size: 30px
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-style: normal;
+    text-align: center;
+    color: Black;
 }
 
-.logo-box {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 25%;
-    height: 75px;
-    padding: 10px 30px 10px 30px;
-    background-color: #c0392b;
-    border-right: 1px solid #d2d2d2;
-    min-width: 325px; 
+section .main {
+    margin: auto;
+	background-color: rgba(231, 76, 60, 0.9)
 }
 
-.nav-list {
+/* styling for the chat control area */
+.navbar {
+    display: block;
+	padding: 0px 5px 0px 5px;
+    width: 15%;
+    float: left;
+    margin-right: 2%;
+    height: 50em;
+    background-color: white;
+}
+.navbar h3 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.navbar ul {
+    border-collapse: collapse;
+}
+.rooms:hover {
+    text-decoration: underline;
+	cursor: pointer;
+}
+
+
+/* styling for the chatroom area */
+.chatRoom {
+    width: 99%;
+    display: block;
+    height: 50em;
+    border: .25em solid grey;
+    background-color: white;
+}
+.roomName {
+    font-style: italic;
+    color: black;
+}
+.messages {
+    color: black;
+}
+.user {
+    text-decoration: underline;
+}
+.time {
+    font-style: italic;
+}
+.newMessages {
     position: relative;
-    min-width: 250px;
-    margin: 10%; 
+    left: 16%;
 }
 
-.room-list {
-    position: relative;
-    min-width: 250px;
-    width: 76%;
-    margin: 0 7% 0% 12%;
-    padding: 0 0 3% 0%;
-    border-bottom: 2px solid #d2d2d2; 
-}*/
+
+
+
