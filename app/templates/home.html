@@ -1,30 +1,34 @@
-<div class="logo-box">
-    <img src="/assets/images/bloc-logo-white.png" alt="bloc bloc logo">
-</div>
+<section> 
+	<div class="logo-box">
+		<img src="/assets/images/bloc-logo-white.png" alt="bloc bloc logo">
+	</div>
+	<h1 class="hero">{{ home.heroTitle }}</h1>
 
 
-<div ng-controller="RoomCtrl as roomC">
-<!--Sidebar with list of rooms-->
-<nav class="navbar" >
-	<section class="container-1">
-    	<h1 class="hero">{{ home.heroTitle }}</h1>
-    </section>
-    <div >
-        <h3 class="room-list">Chat Rooms</h3>
 
-        <ul>
-            <li class="nav-list" ng-repeat="room in roomC.all">  
-            	<a href="" ng-click="roomC.getMessages(room)">{{ room.name }}</a>
-            </li>
-        </ul>
+	<div>
+	<!--Sidebar with list of rooms-->
+	<nav class="navbar" >
+		<div>
+			<h3 class="rooms">Chat Rooms</h3>
 
-        <div >
-            <button ng-click="roomC.open()">Create a New Room</button>
-        </div>
-    </div>
-</nav>
+			<ul>
+				<li class="nav-list" ng-repeat="room in home.rooms">  
+					<a href="" ng-click="home.setRoom(room)">{{ room.name }}</a>
+				</li>
+			</ul>
 
-<div ng-repeat="message in roomC.messages"> </div>
-</div>
+			<div class="button">
+				<button ng-click="home.open()">Create a New Room</button>
+			</div>
+		</div>
+	</nav>
+		<section class="ChatRoom">
+			<h4 class="roomName">{{ room.name }}</h4>
+			<h3>Messages</h3>
+			<p ng-repeat="message in home.room">{{ message.content }} </p>
+		</section>
+	</div>
+</section>
 
 
