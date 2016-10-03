@@ -1,5 +1,7 @@
 html {
     height: 100%;
+	background-color: rgba(231, 76, 60, 0.9)
+	
     
 }
 .parent {
@@ -15,8 +17,10 @@ html {
     text-align: center;
     color: Black;
 }
-.main {
+
+section .main {
     margin: auto;
+	background-color: rgba(231, 76, 60, 0.9)
 }
 
 /* styling for the chat control area */
@@ -32,7 +36,7 @@ html {
 .navbar h3 {
     text-align: center;
     font-weight: 700;
-    margin-bottom: -1em;
+    margin-bottom: 5px;
 }
 
 .navbar ul {
