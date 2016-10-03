@@ -11,7 +11,7 @@
     Room.add = function(roomName) {
         rooms.$add({
             name: roomName
-        })
+        });
     };
 	  
 	
