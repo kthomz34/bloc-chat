@@ -11,37 +11,40 @@
 
 
 	<div>
-	<!--Sidebar with list of rooms-->
-	<nav class="navbar" >
-		<div>
-			<h3 class="room-title">Chat Rooms</h3>
+		<!--Sidebar with list of rooms-->
+		<nav class="navbar" >
+			<div>
+				<h3 class="room-title">Chat Rooms</h3>
 
-			<ul>
-				<li class="rooms" ng-repeat="room in home.rooms">  
-					<a ng-click="setRoom(room)">{{ room.name }}</a>
-				</li>
-			</ul>
+				<ul>
+					<li class="rooms" ng-repeat="room in home.rooms">  
+						<a ng-click="home.setRoom(room)">{{ room.name }}</a>
+					</li>
+				</ul>
 
-			<div class="button">
-				<button ng-click="home.open()">Create a New Room</button>
+				<div class="button">
+					<button ng-click="home.open()">Create a New Room</button>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+
 		<section class="ChatRoom">
 			<h4 class="roomName">{{ currentRoom.name }}</h4>
 			<h3>Messages</h3>
-			<p ng-repeat="message in messages">{{ message.content }} </p>
+			<p ng-repeat="message in home.currentMessages">{{ message.content }} </p>
 		</section>
-		
-	<section class="newMessages">
-		<form>
 
-			<input type="text" class="newText" placeholder="your message here" ng-model="newMessage.content">
-			<button ng-click="home.sendMessage(newMessage)">Send</button>
+	<!--
+		<section class="newMessages">
+			<form>
 
-		</form>
+				<input type="text" class="newText" placeholder="your message here" ng-model="newMessage.content">
+				<button ng-click="home.sendMessage(newMessage)">Send</button>
 
-	</section>
+			</form>
+
+		</section>
+	-->
 	</div>
 </section>
 
