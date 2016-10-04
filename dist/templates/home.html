@@ -6,45 +6,46 @@
 	<div>
 		<h2>{{ home.user }}</h2>
 	</div>
-	<h1 class="hero">{{ home.heroTitle }}</h1>
+	
 
 
 
-	<div>
+	
 	<!--Sidebar with list of rooms-->
-	<nav class="navbar" >
-		<div>
-			<h3 class="room-title">Chat Rooms</h3>
-
-			<ul>
-				<li class="rooms" ng-repeat="room in home.rooms">  
-					<a ng-click="setRoom(room)">{{ room.name }}</a>
-				</li>
-			</ul>
-
-			<div class="button">
-				<button ng-click="home.open()">Create a New Room</button>
+	<aside class="sidebar" >
+		<h3 class="room-label">Chat Rooms</h3>
+		<section>
+			
+			<div class="chat-rooms" ng-repeat="room in home.rooms">
+				<i class="icon ion-chatbubbles"></i> 
+				<a class="room-link" ng-click="setRoom(room)">{{ room.name }}</a>
 			</div>
+		</section>
+
+		<div>
+			<button class="create-room" ng-click="home.open()">New Room</button>
 		</div>
-	</nav>
+		
+		<divng-show="modalInstance.chatName"></div>
+	</aside>
+		
+	<section class="main-container">
+		<header class="main-header">{{ home.heroTitle }}</h1>
+		<!--Messages-->
+		<p class="message-content" ng-repeat="message in messages">{{ message.content }} </p>
+	</section>
+	
 		<section class="ChatRoom">
-			<h4 class="roomName">{{ currentRoom.name }}</h4>
-			<h3>Messages</h3>
-			<p ng-repeat="message in messages">{{ message.content }} </p>
+			<h4 class="roomName">{{ currentRoom.name }}</h4>	
 		</section>
 		
-<!--
-	<section class="newMessages">
-		<form>
-
-			<input type="text" class="newText" placeholder="your message here" ng-model="message.content">
-			<button ng-click="home.sendMessage(message)">Submit</button>
-
+	<section class="newMessage">
+		<form class="new-message">
+			<input type="text" class="new-message-input" placeholder="your message here" ng-model="newMessage.content">
+			<button class="new-message-submit" ng-click="home.sendMessage()">Send</button>
 		</form>
-
 	</section>
--->
-	</div>
+	
 </section>
 
 
