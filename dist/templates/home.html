@@ -30,7 +30,7 @@
 	<section class="main-container">
 		<header class="main-header">{{ home.heroTitle }}</header>
 		<!--Messages-->
-		<h4 class="room-name">{{ home.currentRoom.$id }}</h4>
+		<h4 class="room-name">{{ home.currentRoom.name }}</h4>
 		<p class="message-content" ng-repeat="message in home.currentMessages">{{ message.content }} </p>
 		<form class="new-message">
 			<input type="text" class="new-message-input" placeholder="your message here" ng-model="newMessage.content">
