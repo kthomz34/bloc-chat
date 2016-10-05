@@ -6,7 +6,7 @@
         
         ctrl.rooms = Room.all;
 		
-		ctrl.currentRoom = {};
+//		ctrl.currentRoom = {room};
 	
         
         ctrl.open = function() {
