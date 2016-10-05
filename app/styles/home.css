@@ -1,244 +1,100 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: "Open Sans";
+}
+
+.container {
+	display: flex;
+}
+
 .sidebar {
-	width: 20%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	background: rgb(231, 76, 60);
-	padding: 24px 16px;
-}
-
-.sidebar .room-label {
-	font-family: "Open Sans";
+	background-color: rgb(231, 76, 60);
 	color: white;
-	font-weight: 300;
-	letter-spacing: 1px;
+	width: 220px;
+	height: 100vh;
+	text-align: left;
+	padding: 0 0 0 26px;
 }
 
-.sidebar .create-room {
-	display: table-cell;
-	vertical-align: middle;
-	border: 0;
-	padding: 6px 20px;
-	margin-left: 100px;
-	color: white;
-	height: 40px;
-	border-radius: 6px;
-	background-color: rgb(18,114,184);
-	font-weight: 700;
-	text-transform: uppercase;
+.sidebar-header {
+	padding: 10px 0 0 30px;
 }
 
-.sidebar .create-room:hover {
-	cursor: pointer;
-	background-color: #3498db;
-	transition: background-color 0.2s ease-out;
-}
-
-/* Chat rooms inside navbar */
 .chat-rooms {
-	font-family: "Open Sans";
-	color: white;
-	font-weight: 300;
-	margin: 8px 0;
-}
-
-.chat-rooms .ion-chatbubbles {
-	font-size: 12px;
-	line-height: 16px;
-	margin-right: 4px;
-	vertical-align: middle;
+	padding: 0 0 10px 0;
+	transition: color 0.2s ease;
 }
 
 .chat-rooms:hover {
-	color: rgb(18,114,184);
-	cursor: pointer;
+	color: rgb(41, 128, 185);
+	cursor: pointer; 
 }
 
-/* Messages */
 .main-container {
-	width: 80%;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	position: absolute;
-	box-sizing: border-box;
-	background-color: rgb(242,243,247);
+	flex-grow: 1;
+	background-color: rgb(236, 240, 241);
 }
 
-.main-container .main-header {
+
+.main-header {
 	background-color: white;
-	padding: 24px;
-	font-family: "Open Sans";
-	font-size: 36px;
-	color: rgb(157,158,164);
-}
-
-.message-content {
-	font-family: "Open Sans";
-	color: rgb(89,90,92);
-	font-size: 14px;
-	margin-bottom: 16px;
-}
-
-.message-list {
-	position: absolute;
-	top: 70px;
-	bottom: 126px;
-	overflow-y: scroll;
-	box-sizing: border-box;
-	width: 100%;
-	padding-right: 36px;
-	padding-left: 36px;
+	color: rgb(189, 195, 199);
+	padding: 20px 0 20px 10px;
+	font-size: 30px;
 }
 
 
+/* New Messages Form */
+
+.new-message > * {
+	padding: 10px;
+	background-color: white;
+	line-height: 30px;
+	font-size: 20px;
+	border-radius: 0;
+	outline: 0;
+	border-right: 1px solid rgba(0,0,0,0.2);
+	flex: 1%;	
+	-webkit-appearance:none;
+	
+}
+
+.flex-form > *:last-child {
+	border-right: 0;
+}
 
 .new-message {
-	width: 100%;
-	box-sizing: border-box;
-	position: absolute;
-	bottom: 0;
-	padding: 32px;
-	display: table;
-	background-color: white;
+	display: flex;
+	border: 8px solid rgba(0,0,0,0.3);
+	
 }
 
-.new-message .new-message-input, .new-message .new-message-submit {
-	display: table-cell;
-	vertical-align: middle;
+input[type="text"] {
+	flex: 99%;
 }
 
-.new-message .new-message-input {
-	border: 1px solid transparent;
-	width: 85%;
-	padding: 16px;
-	height: 28px;
-	background-color: rgb(242,243,247);
-	font-family: "Open Sans";
-	font-size: 14px;
-	transition: all 0.25s ease-in;
-	-webkit-transition: all 0.25s ease-in;
-}
+/* Button */
 
-.new-message .new-message-input:focus {
-	outline: none;
-	border: 1px solid rgb(18,114,184);
+.button {
+	transition: background-color 0.2s ease;
+	background-color: rgb(52, 152, 219);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
 }
-
-.new-message .new-message-submit {
-	border: 0;
-	padding: 16px 24px;
-	margin-left: 16px;
-	color: white;
-	height: 60px;
-	border-radius: 6px;
-	background-color: rgb(18,114,184);
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
-.new-message .new-message-submit:hover {
+.button:hover {
 	cursor: pointer;
-	background-color: #3498db;
-	transition: background-color 0.2s ease-out;
-}
-
-/* Make our placeholder styling the same as our input text */
-	::-webkit-input-placeholder {
-	font-family: "Open Sans";
-	font-size: 14px;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-	font-family: "Open Sans";
-	font-size: 14px;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-	font-family: "Open Sans";
-	font-size: 14px;  
-}
-
-:-ms-input-placeholder {  
-	font-family: "Open Sans";
-	font-size: 14px;  
-}
-
-// make our login a modal on top of an overlay
-.login-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background-color: rgba(60,60,60,0.3);
-}
-
-// center the login box on the modal
-.login-overlay .login-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-50%,0);
-  -webkit-transform: translate3d(-50%,-50%,0);
-  -moz-transform: translate3d(-50%,-50%,0);
-  width: 280px;
-  height: 350px;
-  padding: 36px;
-  background-color: white;
-}
-
-.login-container .login-title {
-  font-family: "Open Sans";
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.login-form label {
-  font-family: "Open Sans";
-  margin-bottom: 8px;
-  display: block;
-  width: 100%;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-  font-family: "Open Sans";
-  box-sizing: border-box;
-  width: 100%;
-  padding: 12px;
-  outline: none;
-  border: 1px solid rgb(89,90,92);
-  margin-bottom: 8px;
-}
-
-.login-form input[type="text"]:focus,
-.login-form input[type="password"]:focus {
-  border: 1px solid rgb(18,114,184);
-}
-
-.login-form .login-button {
-  width: 100%;
-  margin-top: 8px;
-  padding: 16px;
-  background-color: rgb(71,57,129);
-  border-radius: 6px;
-  border: 0;
-  font-family: "Open Sans";
-  font-size: 16px;
-  color: white;
-  cursor: pointer;
-}
-
-.login-container .checkbox-label {
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 16px;
-  vertical-align: middle;
-  color: rgb(78,146,196);
-  cursor: pointer;
-  display: inline;
+	background-color: rgb(41, 128, 185);
 }

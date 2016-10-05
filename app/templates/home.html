@@ -1,4 +1,5 @@
-<section class="main"> 
+<section class="container"> 
+<!--
 	<div class="logo-box">
 		<img src="/assets/images/bloc-logo-white.png" alt="bloc bloc logo">
 	</div>
@@ -6,6 +7,7 @@
 	<div>
 		<h2>{{ home.user }}</h2>
 	</div>
+-->
 	
 
 
@@ -13,9 +15,8 @@
 	
 	<!--Sidebar with list of rooms-->
 	<aside class="sidebar" >
-		<h3 class="room-label">Chat Rooms</h3>
+		<h3 class="sidebar-header">Chat Rooms</h3>
 		<section>
-			
 			<div class="chat-rooms" ng-repeat="room in home.rooms">
 				<i class="icon ion-chatbubbles"></i> 
 				<a class="room-link" ng-click="setRoom(room)">{{ room.name }}</a>
@@ -23,27 +24,29 @@
 		</section>
 
 		<div>
-			<button class="create-room" ng-click="home.open()">New Room</button>
+			<form>
+				<input class="button" type="submit" value="New Room" ng-click="home.open()">
+			</form>
 		</div>
 		
-		<divng-show="modalInstance.chatName"></div>
+		<div ng-show="modalInstance.chatName"></div>
 	</aside>
 		
 	<section class="main-container">
-		<header class="main-header">{{ home.heroTitle }}</h1>
+		<header class="main-header">{{ home.heroTitle }}</header>
 		<!--Messages-->
 		<p class="message-content" ng-repeat="message in messages">{{ message.content }} </p>
-	</section>
-	
-		<section class="ChatRoom">
-			<h4 class="roomName">{{ currentRoom.name }}</h4>	
-		</section>
-		
-	<section class="newMessage">
+		<h4 class="roomName">{{ currentRoom.name }}</h4>
 		<form class="new-message">
 			<input type="text" class="new-message-input" placeholder="your message here" ng-model="newMessage.content">
-			<button class="new-message-submit" ng-click="home.sendMessage()">Send</button>
+			<input class="button" type="submit" value="Send" ng-click="home.sendMessage()">
 		</form>
+	</section>
+	
+	
+		
+	<section class="newMessage">
+		
 	</section>
 	
 </section>
