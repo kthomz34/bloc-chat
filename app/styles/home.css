@@ -38,6 +38,10 @@ body {
 	cursor: pointer; 
 }
 
+.new-room-btn {
+	padding: 0 0 15px 10px;
+}
+
 .main-container {
 	flex-grow: 1;
 	background-color: rgb(236, 240, 241);
@@ -65,7 +69,7 @@ body {
 
 .new-message > * {
 	padding: 10px;
-	background-color: white;
+	background-color: rgb(236, 240, 241);
 	line-height: 30px;
 	font-size: 20px;
 	border-radius: 0;
@@ -82,7 +86,7 @@ body {
 
 .new-message {
 	display: flex;
-	border: 8px solid rgba(0,0,0,0.3);
+	border: 8px solid rgba(255,255,255,1);
 	
 }
 

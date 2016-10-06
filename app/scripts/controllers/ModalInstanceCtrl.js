@@ -1,6 +1,8 @@
 (function() {
     function ModalInstanceCtrl($uibModalInstance, Room) {
         var ctrl = this;
+		
+		ctrl.animationsEnabled = true;
        
         ctrl.ok = function () {
             console.log(ctrl.chatName);

@@ -1,12 +1,9 @@
-<template class="loginPage">
-	<div class="login-overlay">
-		<div class="login-container">
-		  <h4 class="modal-title">{{ userModalInstance.title }}</h4>
-			<form class="login-form">
-				<label for="username">Username</label>
-				<input type="text" class="form-control" placeholder="Enter username" ng-model="userModalInstance.username">
-				<button type="submit" class="login-button" type="button" ng-click="userModalInstance.ok()">Log in</button>  
-			</form>
-		</div>
-	</div>
-</template>
+<div>
+  <h4>{{ userModalInstance.title }}</h4>
+	<form class="login-form">
+		<label>Username</label>
+		<input type="text" placeholder="Enter username" ng-model="userModalInstance.username">
+		<input type="submit" class="button" type="button" value="Log in" ng-click="userModalInstance.ok()">  
+	</form>
+</div>
+

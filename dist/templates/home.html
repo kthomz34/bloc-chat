@@ -11,6 +11,11 @@
 	<!--Sidebar with list of rooms-->
 	<aside class="sidebar" >
 		<h3 class="sidebar-header">Chat Rooms</h3>
+		<div>
+			<form class="new-room-btn">
+				<input class="button" type="submit" value="New Room" ng-click="home.open()">
+			</form>
+		</div>
 		<section>
 			<div class="chat-rooms" ng-repeat="room in home.rooms">
 				<i class="icon ion-chatbubbles"></i> 
@@ -18,23 +23,19 @@
 			</div>
 		</section>
 
-		<div>
-			<form>
-				<input class="button" type="submit" value="New Room" ng-click="home.open()">
-			</form>
-		</div>
 		
-		<div ng-show="modalInstance.chatName"></div>
 	</aside>
 		
 	<section class="main-container">
 		<header class="main-header">{{ home.heroTitle }}</header>
 		<!--Messages-->
 		<h4 class="room-name">{{ home.currentRoom.name }}</h4>
-		<p class="message-content" ng-repeat="message in home.currentMessages">{{ message.content }} </p>
+		<section>
+			<p class="message-content" ng-repeat="message in home.currentMessages">{{message.username}}: {{ message.content }} </br> (Sent: {{ message.sentAt | date : "medium" : 'PST' }}) </p>
+		</section>
 		<form class="new-message">
-			<input type="text" class="new-message-input" placeholder="your message here" ng-model="newMessage.content">
-			<input class="button" type="submit" value="Send" ng-click="home.sendMessage()">
+			<input type="text" class="new-message-input" placeholder="your message here" ng-model="message.content">
+			<input class="button" type="submit" value="Send" ng-click="home.sendMessage(message)">
 		</form>
 	</section>
 </div>
